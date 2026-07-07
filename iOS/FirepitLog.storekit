@@ -1,0 +1,42 @@
+{
+  "identifier": "firepitlog",
+  "nonRenewingSubscriptions": [],
+  "products": [],
+  "settings": {
+    "_askToBuyEnabled": false
+  },
+  "subscriptionGroups": [
+    {
+      "id": "21500000",
+      "localizations": [],
+      "name": "Firepit Log Pro",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "0.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "firepitlog_pro_monthly",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Unlocks photo memories per fire and a yearly recap.",
+              "displayName": "Firepit Log Pro",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "firepitlog_pro_monthly",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Firepit Log Pro Monthly",
+          "subscriptionGroupID": "21500000",
+          "type": "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}

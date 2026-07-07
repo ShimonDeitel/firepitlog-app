@@ -1,0 +1,75 @@
+name: Firepit Log
+options:
+  bundleIdPrefix: com.shimondeitel.firepitlog
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  FirepitLog:
+    type: application
+    platform: iOS
+    sources:
+      - path: FirepitLog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.firepitlog
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: FirepitLog/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  FirepitLogTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: FirepitLogTests
+      - path: FirepitLog.storekit
+    dependencies:
+      - target: FirepitLog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.firepitlog.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  FirepitLogUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: FirepitLogUITests
+    dependencies:
+      - target: FirepitLog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.firepitlog.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  FirepitLog:
+    build:
+      targets:
+        FirepitLog: all
+        FirepitLogTests: [test]
+        FirepitLogUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: FirepitLog.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: FirepitLog.storekit
+      targets:
+        - FirepitLogTests
+        - FirepitLogUITests
+    archive:
+      config: Release
